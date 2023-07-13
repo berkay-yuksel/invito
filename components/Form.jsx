@@ -19,7 +19,7 @@ async function Form({username}) {
  
 
   return (
-    <div>dis {user.account} is {user.eligible ? "eligible": "not eligible"} </div>
+    <div>dis {user ? user.account : username } is {user ? (user.eligible ? "eligible": "not eligible"): username } </div>
   )
 }
 
