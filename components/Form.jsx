@@ -12,7 +12,7 @@ async function Form({username}) {
       });
 
       useEffect(() => {
-     if(rows.lenght>0) {
+     if(rows[0]==username) {
         setUser({ ...user, account:  username, eligible: true  })
      }
       }, [username]);
