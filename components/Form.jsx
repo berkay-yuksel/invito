@@ -10,13 +10,13 @@ async function Form({username}) {
         address:"",
         eligible: false
       });
-
+      
+      if(rows[0]==username) {
       useEffect(() => {
-     if(rows[0]==username) {
         setUser({ ...user, account:  username, eligible: true  })
-     }
+   
       }, [username]);
- 
+    }
 
   return (
     <div>dis {user ? user.account : username } is {user ? (user.eligible ? "eligible": "not eligible"): username } </div>
