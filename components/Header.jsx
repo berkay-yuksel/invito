@@ -3,7 +3,7 @@
 import Form from "./Form";
 
 import { useSession } from "next-auth/react"
-function Header({rows}) {
+function Header({rows,drop}) {
   const {data:session,status } = useSession()
 
 
@@ -17,7 +17,7 @@ if(status==="authenticated"){
      <br/>
      
      <Form rows={rows} username={session.user.name} />
-  
+  <p>{drop}</p>
     </div>
   );
 }

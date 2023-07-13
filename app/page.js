@@ -3,7 +3,7 @@ import Header from '../components/Header'
 
 import { sql } from "@vercel/postgres";
 
-export default async function Home() {
+export default async function Checker(drop) {
   const { rows } = await sql`SELECT
 	*
 FROM
@@ -11,9 +11,10 @@ FROM
 WHERE
 	account= 'briansvaultself';`;
 
+
   return (
     <div>
-      <Header rows={rows}/>
+      <Header drop={drop} rows={rows}/>
 
     </div>
   );
