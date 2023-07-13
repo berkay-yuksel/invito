@@ -11,7 +11,7 @@ if (session) {
         <br />    <br />
     <br />
     <Image
-      src={session.user.profile_image_url_https}
+      src={session.user.image}
       width={50}
       height={50}
       alt="Picture of the user"
