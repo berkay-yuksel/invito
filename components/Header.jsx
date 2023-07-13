@@ -14,12 +14,10 @@ function Header() {
   });
 
 if(status==="authenticated"){
-  useEffect(() => {
-    setUser({ ...user, account: session.user.name })
-  }, []);
   
+  setUser({ ...user, account: session.user.name ? session.user.name : "none" })
+  console.log(user)
   
-  console.log(user.account ? user : "what")
   return(
     <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
     
@@ -28,7 +26,9 @@ if(status==="authenticated"){
   );
 }
 
+useEffect(() => {
 
+}, []);
   return (
   
     <div>
