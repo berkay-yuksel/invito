@@ -13,20 +13,22 @@ function Header() {
     eligible: false
   });
 
-if(status==="authenticated"){
-  useEffect(() => {
+
+
+
+useEffect(() => {
     setUser({ ...user, account:  "none"  })
+    if(status==="authenticated"){
+  
+      return(
+        <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
+        
+        
+        </div>
+      );
+    }
   }, []);
   console.log(user ? user :"user can't be found")
-  
-  return(
-    <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
-    
-    
-    </div>
-  );
-}
-
 
 
   return (
