@@ -14,11 +14,10 @@ function Header() {
   });
 
 if(status==="authenticated"){
-  
   useEffect(() => {
-    setUser({ ...user, account: session.user.name ? session.user.name : "none" })
+    setUser({ ...user, account:  "none"  })
   }, []);
-  console.log(user)
+  console.log(user ? user :"user can't be found")
   
   return(
     <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
@@ -29,10 +28,11 @@ if(status==="authenticated"){
 }
 
 
+
   return (
   
     <div>
-      youneed to sign in to see this page
+      youneed to sign in to see this page {user.account}
     </div>
   )
 }

@@ -6,7 +6,7 @@ import Image from 'next/image'
 function PorfileIcon() {
 const {data:session}=useSession();
 if (session) {
-  console.log(session.user)
+ 
   return (
     <>
         <br />    <br />
