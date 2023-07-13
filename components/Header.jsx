@@ -14,7 +14,7 @@ if(status==="authenticated"){
   return(
     <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
     
-    <Form username={session.user.name} />
+    <Form username />
     </div>
   );
 }
@@ -26,7 +26,7 @@ if(status==="authenticated"){
   return (
   
     <div>
-      youneed to sign in to see this page 
+      youneed to sign in to see this page {user.account}
     </div>
   )
 }

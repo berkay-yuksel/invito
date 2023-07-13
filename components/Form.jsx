@@ -1,6 +1,7 @@
 import  { useState ,useEffect } from 'react';
-
-function Form({username}) {
+import { db } from '@vercel/postgres';
+async function Form({username}) {
+    const { rows } = await sql`SELECT * from Users where account=${username}`;
 
     const [user, setUser] = useState({
         account:"",
@@ -11,13 +12,16 @@ function Form({username}) {
       });
 
       useEffect(() => {
-        setUser({ ...user, account:  username  })
-      }, []);
+     if(rows.lenght>0) {
+        setUser({ ...user, account:  username, eligible: true  })
+     }
+      }, [username]);
  
 
   return (
-    <div>dis {user.account}</div>
+    <div>dis {user.account} is {user.eligible ? "eligible": "not eligible yet"} </div>
   )
 }
 
 export default Form
+
