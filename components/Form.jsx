@@ -12,7 +12,7 @@ function Form({username}) {
 
       useEffect(() => {
         setUser({ ...user, account:  username  })
-      }, []);
+      }, [username]);
  
 
   return (
