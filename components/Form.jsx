@@ -11,13 +11,15 @@ function Form({rows,username}) {
 
       if(rows[0].account==username) {
       useEffect(() => {
-        setUser({ ...user, account:  username, eligible: true  })
+        setUser({ ...user, account: username, eligible: true  })
    
       }, [username]);
     }
   return (
-    <div>{user.account} is {user.eligible ? "eligible": "not eligible"}</div>
-  )
+
+    <div><b>{user.account==="" ? username : user.account }</b> is <b>{user.eligible ? "eligible": "not eligible"}</b></div>
+ 
+    )
 }
 
 export default Form
