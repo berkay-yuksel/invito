@@ -11,7 +11,7 @@ if (session) {
         <br />    <br />
     <br />
     <Image
-      src={session.user.image}
+      src="https://pbs.twimg.com/profile_images/1614643470685151232/qpwEr_VL_normal.jpg"
       width={50}
       height={50}
       alt="Picture of the user"
@@ -26,6 +26,12 @@ return (
   <br />
   <br />
     Not signed in <br />
+    <Image
+      src="https://pbs.twimg.com/profile_images/1614643470685151232/qpwEr_VL_normal.jpg"
+      width={50}
+      height={50}
+      alt="Picture of the user"
+    />
     <button onClick={() => signIn()}>Sign in</button>
   </>
 )
