@@ -2,6 +2,7 @@
 import {signIn,signOut,useSession} from 'next-auth/react'
 import Image from 'next/image'
 
+
 function PorfileIcon() {
 const {data:session}=useSession();
 if (session) {
@@ -26,6 +27,7 @@ return (
   <br />
     Not signed in <br />
     <button onClick={() => signIn()}>Sign in</button>
+
   </>
 )
 
