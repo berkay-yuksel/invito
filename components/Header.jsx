@@ -16,7 +16,7 @@ function Header() {
 if(status==="authenticated"){
   useEffect(() => {
     setUser({ ...user, account: session.user.name })
-  }, {});
+  }, []);
   
   
   console.log(user.account ? user : "what")
