@@ -4,7 +4,7 @@ async function Form({username}) {
  //   const { rows } = await db`SELECT * from Users WHERE account=${username}`;
 
 
-    console.log(username ? username : "there is no username");
+    console.log(username);
 
   return (
   //  <div>dis {user ? user.account : username } is {user ? (user.eligible ? "eligible": "not eligible"): username } </div>
