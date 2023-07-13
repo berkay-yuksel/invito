@@ -11,11 +11,11 @@ FROM
 WHERE
 	account= 'briansvaultself';`;
 
-  
   return (
     <div>
       <Header rows={rows}/>
-
+    
+    </div>
     </div>
   );
 }
