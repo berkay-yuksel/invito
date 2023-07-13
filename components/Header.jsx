@@ -17,26 +17,29 @@ function Header() {
 
 
 useEffect(() => {
-    setUser({ ...user, account:  "none"  })
-    if(status==="authenticated"){
   
+    if(status==="authenticated"){
+      setUser({ ...user, account: session.user.name  })
       return(
         <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
         
         
         </div>
       );
+    }else{
+      console.log(user ? user :"user can't be found")
+
+
+      return (
+      
+        <div>
+          youneed to sign in to see this page {user.account}
+        </div>
+      )
+
     }
   }, []);
-  console.log(user ? user :"user can't be found")
 
-
-  return (
-  
-    <div>
-      youneed to sign in to see this page {user.account}
-    </div>
-  )
 }
 
 export default Header
