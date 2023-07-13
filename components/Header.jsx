@@ -26,7 +26,7 @@ if(status==="authenticated"){
   return (
   
     <div>
-      youneed to sign in to see this page {user.account}
+      youneed to sign in to see this page 
     </div>
   )
 }

@@ -1,4 +1,3 @@
-"use client";
 import  { useState ,useEffect } from 'react';
 
 function Form({username}) {
@@ -13,7 +12,7 @@ function Form({username}) {
 
       useEffect(() => {
         setUser({ ...user, account:  username  })
-      }, [username]);
+      }, []);
  
 
   return (
