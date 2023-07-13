@@ -1,8 +1,20 @@
+
 import Header from '../components/Header'
-export default function Home() {
+
+import { sql } from "@vercel/postgres";
+
+export default async function Home() {
+  const { rows } = await sql`SELECT
+	*
+FROM
+	users
+WHERE
+	account= 'briansvaultself';`;
+
   return (
-    <main >
-<Header/>
-    </main>
-  )
+    <div>
+      <Header rows={rows}/>
+
+    </div>
+  );
 }

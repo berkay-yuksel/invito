@@ -1,27 +1,6 @@
-import  { useState ,useEffect } from 'react';
-import { db } from '@vercel/postgres';
-async function Form({username}) {
- //   const { rows } = await db`SELECT * from Users WHERE account=${username}`;
+import {useState,useEffect} from 'react'
 
-
-    console.log(username);
-
-  return (
-  //  <div>dis {user ? user.account : username } is {user ? (user.eligible ? "eligible": "not eligible"): username } </div>
-
-  <div>
-sadasd
-</div>
-
-
-  )
-}
-
-export default Form
-
-/*
-
-
+function Form({rows,username}) {
     const [user, setUser] = useState({
         account:"",
         firstinvite:"",
@@ -36,8 +15,9 @@ export default Form
    
       }, [username]);
     }
+  return (
+    <div>{user.name} is {user.eligible ? "eligible": "not eligible"}</div>
+  )
+}
 
-
-
-
-*/
+export default Form
