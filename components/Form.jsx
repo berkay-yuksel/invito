@@ -1,7 +1,7 @@
-"use client";
+import  { useState ,useEffect } from 'react';
 import { db } from '@vercel/postgres';
 async function Form({username}) {
-    const { rows } = await db`SELECT * from Users WHERE account=${username}`;
+ //   const { rows } = await db`SELECT * from Users WHERE account=${username}`;
 
     console.log(rows ? rows : "there is no rows");
     console.log(username ? username : "there is no username");
@@ -10,11 +10,7 @@ async function Form({username}) {
   //  <div>dis {user ? user.account : username } is {user ? (user.eligible ? "eligible": "not eligible"): username } </div>
 
   <div>
-  {rows.map((row) => (
-    <div key={row.id}>
-      {row.id} - {row.account}
-    </div>
-  ))}
+sadasd
 </div>
 
 
