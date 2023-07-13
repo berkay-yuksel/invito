@@ -11,7 +11,7 @@ if (session) {
         <br />    <br />
     <br />
     <Image
-      src={session.user.image}
+      src={session.user.image.replace("_normal","")}
       width={50}
       height={50}
       alt="Picture of the user"
