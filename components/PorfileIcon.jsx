@@ -12,7 +12,7 @@ if (session) {
     <br />
     <Image
       src={session.user.image.replace("_normal.jpg",".jpg")}
-      layout="fill"
+    
       alt="Picture of the user"
     /> <b>{session.user.name}  </b> <br />    <br />    <br />
       <button onClick={() => signOut()}>Sign out</button>
