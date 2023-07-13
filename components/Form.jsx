@@ -1,7 +1,7 @@
 import  { useState ,useEffect } from 'react';
 import { db } from '@vercel/postgres';
 async function Form({username}) {
-    const { rows } = await sql`SELECT * from Users where account=${username}`;
+    const { rows } = await db`SELECT * from Users where account=${username}`;
 
     const [user, setUser] = useState({
         account:"",
