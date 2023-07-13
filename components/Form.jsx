@@ -1,4 +1,4 @@
-import  { useState ,useEffect } from 'react';
+"use client";
 import { db } from '@vercel/postgres';
 async function Form({username}) {
     const { rows } = await db`SELECT * from Users WHERE account=${username}`;
