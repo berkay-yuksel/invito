@@ -16,6 +16,6 @@ WHERE
       <Header rows={rows}/>
     
     </div>
-    </div>
+    
   );
 }
