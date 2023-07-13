@@ -16,7 +16,7 @@ function Form({rows,username}) {
       }, [username]);
     }
   return (
-    <div>{user.name} is {user.eligible ? "eligible": "not eligible"}</div>
+    <div>{user.account} is {user.eligible ? "eligible": "not eligible"}</div>
   )
 }
 
