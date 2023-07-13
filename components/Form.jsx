@@ -3,7 +3,7 @@ import { db } from '@vercel/postgres';
 async function Form({username}) {
  //   const { rows } = await db`SELECT * from Users WHERE account=${username}`;
 
-    console.log(rows ? rows : "there is no rows");
+
     console.log(username ? username : "there is no username");
 
   return (
