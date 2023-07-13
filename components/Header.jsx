@@ -20,6 +20,7 @@ useEffect(() => {
   
     if(status==="authenticated"){
       setUser({ ...user, account: session.user.name  })
+      console.log(user ? user :"user can't be found")
       return(
         <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
         
@@ -27,7 +28,7 @@ useEffect(() => {
         </div>
       );
     }else{
-      console.log(user ? user :"user can't be found")
+ 
 
 
       return (
