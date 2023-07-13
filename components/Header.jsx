@@ -15,7 +15,9 @@ function Header() {
 
 if(status==="authenticated"){
   
-  setUser({ ...user, account: session.user.name ? session.user.name : "none" })
+  useEffect(() => {
+    setUser({ ...user, account: session.user.name ? session.user.name : "none" })
+  }, []);
   console.log(user)
   
   return(
@@ -26,9 +28,7 @@ if(status==="authenticated"){
   );
 }
 
-useEffect(() => {
 
-}, []);
   return (
   
     <div>
