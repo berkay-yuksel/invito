@@ -1,5 +1,5 @@
 "use client";
-import  { useState ,useEffect  } from 'react';
+import  { useState  } from 'react';
 
 import { useSession } from "next-auth/react"
 function Header() {
@@ -14,7 +14,8 @@ function Header() {
   });
 
 if(status==="authenticated"){
-
+  {()=>setUser({ ...user, account: "not yet" });}
+  console.log(user.account)
   return(
     <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
     
@@ -25,7 +26,9 @@ if(status==="authenticated"){
   );
 }
 
+
   return (
+  
     <div>
       youneed to sign in to see this page
     </div>
