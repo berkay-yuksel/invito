@@ -13,8 +13,7 @@ const AddUser = ({users,twitterprofile}) => {
     account:"",
     firstinvite:"",
     secondinvite:"",
-    address:"",
-    sent:false
+    address:""
   });
 
 
@@ -40,8 +39,9 @@ const handleChange=(e)=>{
 
 const handleSubmit=()=>{
     if(valid===true){
+      
   startTransition(()=>addUserToDatabase(user));
-  setUser({...user, sent:true})
+ 
  }else{
   alert("nah dud! dis already invited")
  }
@@ -52,7 +52,7 @@ const handleSubmit=()=>{
   return (
     <div>
 
-  {users.include(twitterprofile).sent ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
+  {users.includes(twitterprofile) ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
   
     <div>
 <input
