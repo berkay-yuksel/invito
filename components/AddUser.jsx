@@ -13,7 +13,8 @@ const AddUser = ({users,twitterprofile}) => {
     account:"",
     firstinvite:"",
     secondinvite:"",
-    address:""
+    address:"",
+
   });
 
 
@@ -54,7 +55,9 @@ const handleSubmit=()=>{
   return (
     <div>
 
-  {users.includes(twitterprofile) ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
+  {
+  users.some(person => person.account === twitterprofile);
+  ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
   
     <div>
 <input
