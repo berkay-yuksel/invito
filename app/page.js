@@ -13,7 +13,7 @@ FROM
 
 
 
-  const res = await fetch("http://localhost:3000/api/post-users",{
+  const res = await fetch("https://invito-teal.vercel.app/api/post-users",{
     cache: 'no-cache',
     next: {
       tags:["users"]
