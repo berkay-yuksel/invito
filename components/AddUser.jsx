@@ -1,10 +1,10 @@
 'use client'
 
-import { addUserToDatabase, getAllUsers } from "../actions/serverActions";
+import { addUserToDatabase } from "../actions/serverActions";
 import { useTransition ,useState, useEffect } from "react"
 
 
-const AddUser = ({users}) => {
+const AddUser = ({users,twitterprofile}) => {
 
   
   const [isPending,startTransition]= useTransition();
@@ -14,11 +14,12 @@ const AddUser = ({users}) => {
     firstinvite:"",
     secondinvite:"",
     address:"",
+    sent:false
   });
 
 
 const [valid,setValid]= useState()
-const [done,setDone]= useState(false)
+
 
 useEffect(() => {
   
@@ -40,7 +41,7 @@ const handleChange=(e)=>{
 const handleSubmit=()=>{
     if(valid===true){
   startTransition(()=>addUserToDatabase(user));
-  setDone(true)
+  setUser({...user, sent:true})
  }else{
   alert("nah dud! dis already invited")
  }
@@ -51,7 +52,7 @@ const handleSubmit=()=>{
   return (
     <div>
 
-  {done ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
+  {users.include(twitterprofile).sent ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
   
     <div>
 <input
