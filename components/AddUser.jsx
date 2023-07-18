@@ -17,9 +17,10 @@ const AddUser = ({users,twitterprofile}) => {
   });
 
 
-const [valid,setValid]= useState()
+const [valid,setValid]= useState(true)
 
 
+/*
 useEffect(() => {
   
   if(user){
@@ -29,6 +30,7 @@ useEffect(() => {
    }
 
 }, [user])
+*/
 
 
 
