@@ -22,7 +22,7 @@ const [valid,setValid]= useState()
 
 useEffect(() => {
   
-  if(users[0].account==user.account){
+  if(user){
     setValid(false)
    }else{
     setValid(true)
