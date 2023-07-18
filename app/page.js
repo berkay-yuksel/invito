@@ -1,37 +1,32 @@
+import Main from '../components/Main'
+import { revalidateTag } from "next/cache";
 
-import Header from '../components/Header'
-import AddUser from '../components/AddUser'
-import { sql } from "@vercel/postgres";
 
 export default async function Home() {
 
-  const { rows } = await sql`SELECT
-	*
-FROM
-	users
-`;
+/* http://localhost:3000/api/get-users 
+https://invito-teal.vercel.app/api/get-users
+*/
 
-
-
-  const res = await fetch("https://invito-teal.vercel.app/api/post-users",{
+  const res = await fetch("https://invito-teal.vercel.app/api/get-users",{
     cache: 'no-cache',
     next: {
       tags:["users"]
     }
   
   })
+  const users = await res.json();
+  revalidateTag('users')
   
-  const users = await res.json()
+  
+  
+
   return (
     <div>
-     <Header users={users} rows={rows}/>
+     <Main users={users.users.rows} />
    
     
-    
-
- 
-
-
+  
     </div>
     
   );

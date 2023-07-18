@@ -4,7 +4,7 @@ import { addUserToDatabase, getAllUsers } from "../actions/serverActions";
 import { useTransition ,useState, useEffect } from "react"
 
 
-const AddUser = ({rows,users}) => {
+const AddUser = ({users}) => {
 
   
   const [isPending,startTransition]= useTransition();
@@ -13,16 +13,16 @@ const AddUser = ({rows,users}) => {
     account:"",
     firstinvite:"",
     secondinvite:"",
-    address:""
+    address:"",
   });
 
 
 const [valid,setValid]= useState()
-
+const [done,setDone]= useState(false)
 
 useEffect(() => {
   
-  if(rows[0].account==user.account){
+  if(users[0].account==user.account){
     setValid(false)
    }else{
     setValid(true)
@@ -40,7 +40,7 @@ const handleChange=(e)=>{
 const handleSubmit=()=>{
     if(valid===true){
   startTransition(()=>addUserToDatabase(user));
-  startTransition(()=>getAllUsers())
+  setDone(true)
  }else{
   alert("nah dud! dis already invited")
  }
@@ -48,12 +48,15 @@ const handleSubmit=()=>{
 }
 
 
-
   return (
+    <div>
+
+  {done ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
+  
     <div>
 <input
         type="text"
-        placeholder="Add user name"
+        placeholder="@yourowntwitter"
         value={user.account}
         name="account"
         onChange={handleChange}
@@ -63,7 +66,7 @@ const handleSubmit=()=>{
     <br/>  <br/>
   <input
         type="text"
-        placeholder="Add price"
+        placeholder="@twitter"
         value={user.firstinvite}
         name="firstinvite"
         onChange={handleChange}
@@ -74,7 +77,7 @@ const handleSubmit=()=>{
 
     <input
         type="text"
-        placeholder="Add price"
+        placeholder="@twitter"
         value={user.secondinvite}
         name="secondinvite"
         onChange={handleChange}
@@ -85,7 +88,7 @@ const handleSubmit=()=>{
 
     <input
         type="text"
-        placeholder="Add price"
+        placeholder="Wallet Address"
         value={user.address}
         name="address"
         onChange={handleChange}
@@ -99,6 +102,10 @@ const handleSubmit=()=>{
     >{isPending ? "Adding": "SubmitUser"}</button>
   <hr/>
 
+
+
+    </div>
+    }
 
     </div>
   
