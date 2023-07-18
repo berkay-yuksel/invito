@@ -1,20 +1,37 @@
 
 import Header from '../components/Header'
-
+import AddUser from '../components/AddUser'
 import { sql } from "@vercel/postgres";
 
 export default async function Home() {
+
   const { rows } = await sql`SELECT
 	*
 FROM
 	users
-WHERE
-	account= 'briansvaultself';`;
+`;
 
+
+
+  const res = await fetch("http://localhost:3000/api/post-users",{
+    cache: 'no-cache',
+    next: {
+      tags:["users"]
+    }
+  
+  })
+  
+  const users = await res.json()
   return (
     <div>
-      <Header rows={rows}/>
+     <Header users={users} rows={rows}/>
+   
     
+    
+
+ 
+
+
     </div>
     
   );
