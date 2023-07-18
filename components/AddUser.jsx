@@ -57,7 +57,7 @@ const handleSubmit=()=>{
 
   {
   users.some(person => person.account === twitterprofile)
-  ? `congrats${user.firstinvite}! \n you've successfully invted ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
+  ? `congrats${user.firstinvite}! , \n you've successfully invited ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!` : 
   
     <div>
 <input
