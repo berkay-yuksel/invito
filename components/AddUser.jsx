@@ -61,7 +61,7 @@ const handleChange=(e)=>{
 
 const handleSubmit=()=>{
     if( validFirstInvite && validSecondInvite && validAddress && user.firstinvite!=user.secondinvite ){
-      setUser({...user, account: "@deneme1"});
+      setUser({...user, account: "@twitterprofile"});
     startTransition(()=>addUserToDatabase(user)); 
  
  }else{
