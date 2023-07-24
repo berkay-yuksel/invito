@@ -86,7 +86,7 @@ const handleSubmit=()=>{
 <input
         type="text"
         placeholder="@yourowntwitter"
-        value={twitterprofile}
+        value="@twitterprofile"
         name="account"
         disabled 
     />
