@@ -13,7 +13,7 @@ if(status==="authenticated"){
     <div>helloo <b>{session.user.name}  </b>you've succesffuly logged in and seeing protected content! 
   
   <br/>
-     <AddUser twitterprofile={session?session.user.name : "@notfound"} users={users}  />
+     <AddUser twitterprofile={session?`@${session.user.username}` : "@notfound"} users={users}  />
      <hr/>
           <br/>
 
