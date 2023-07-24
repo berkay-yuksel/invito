@@ -1,6 +1,6 @@
 'use client'
 
-import { addUserToDatabase ,getUsersList } from "../actions/serverActions";
+import { addUserToDatabase  } from "../actions/serverActions";
 import { useTransition ,useState, useEffect } from "react"
 
 
