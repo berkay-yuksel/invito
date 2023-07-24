@@ -61,7 +61,7 @@ const handleChange=(e)=>{
 
 const handleSubmit=()=>{
     if( validFirstInvite && validSecondInvite && validAddress && user.firstinvite!=user.secondinvite ){
-
+      setUser({...user, account: "@deneme1"});
     startTransition(()=>addUserToDatabase(user)); 
  
  }else{
@@ -88,7 +88,7 @@ const handleSubmit=()=>{
         placeholder="@yourowntwitter"
         value="@twitterprofile"
         name="account"
-        disabled 
+         
     />
     { " ✓ your account has permission to invite others" }
   
