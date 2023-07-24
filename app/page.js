@@ -8,7 +8,7 @@ export default async function Home() {
 https://invito-teal.vercel.app/api/get-users
 */
 
-  const res = await fetch("https://invito-teal.vercel.app/api/get-users",{
+  const res = await fetch("https://invito-teal.vercel.app/api/get-users ",{
     cache: 'no-cache',
     next: {
       tags:["users"]

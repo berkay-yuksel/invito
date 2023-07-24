@@ -1,6 +1,7 @@
 'use server';
 import { db } from '@vercel/postgres';
 import { revalidateTag } from "next/cache";
+
 export const addUserToDatabase= async(newUser)=>{
   const client = await db.connect();
   
@@ -17,7 +18,7 @@ export const addUserToDatabase= async(newUser)=>{
  
   
   revalidateTag('users')
-  };
-
+  }
   
   
+ 
