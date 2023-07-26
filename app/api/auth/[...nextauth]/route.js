@@ -10,13 +10,10 @@ const handler = NextAuth({
       version: "2.0",
       callbacks: {
         async session(session, user) {
-          session.user = {
-            ...session.user,
-            customField1: 'Hello, this is customField1!',
-            customField2: 42,
-            // Add more hardcoded data as needed
-          };
+         
 
+          session.user.customField1 = 'Hello, this is customField1!';
+          session.user.customField2 = 42;
           
          
           return session;
