@@ -1,14 +1,22 @@
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
 import TwitterProvider from "next-auth/providers/twitter";
-import { fetchUserData } from '../../../../pages/api/twitter'; 
+
 const handler = NextAuth({
   providers: [
     TwitterProvider({
       clientId: process.env.TWITTER_CLIENT_ID,
       clientSecret: process.env.TWITTER_CLIENT_SECRET,
       version: "2.0",
-  
+      callbacks: {
+        async session({ session, token, user }) {
+          // Send properties to the client, like an access_token and user id from a provider.
+          session.accessToken = token.accessToken
+          session.user.id = token.id
+          
+          return session
+        }
+      }
     }),
     GithubProvider({
       clientId: process.env.GITHUB_ID,
