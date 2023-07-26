@@ -9,8 +9,10 @@ function Main({ users}) {
    console.log(session)
    
     
-    const accessToken = session?.user?.auth?.accessToken;
+    // Access the accessToken
+    const accessToken = session?.accessToken;
     console.log('accessToken:', accessToken);
+    
     return (
       <div>
         helloo <b>{session.user.name} </b>you've succesffuly logged in and
