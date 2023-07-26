@@ -3,10 +3,10 @@
 import AddUser from "./AddUser";
 import { useSession } from "next-auth/react";
 function Main({ users}) {
-  const { data: session, status } = useSession();
+  const { data: session, status ,token } = useSession();
 
   if (status === "authenticated") {
-   console.log(session)
+   console.log(token)
    
     
    const debugData = session?.jwt?.debugData;
