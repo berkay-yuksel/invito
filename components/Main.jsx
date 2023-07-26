@@ -7,6 +7,10 @@ function Main({ users}) {
 
   if (status === "authenticated") {
    console.log(session)
+   
+    
+    const accessToken = session?.user?.auth?.accessToken;
+    console.log('accessToken:', accessToken);
     return (
       <div>
         helloo <b>{session.user.name} </b>you've succesffuly logged in and
