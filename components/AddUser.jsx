@@ -1,7 +1,7 @@
 "use client";
 
 import { addUserToDatabase } from "../actions/serverActions";
-import { useTransition, useState } from "react";
+import { useTransition, useState, useEffect } from "react";
 
 const AddUser = ({ users, twitterprofile }) => {
   const [isPending, startTransition] = useTransition();
@@ -74,7 +74,9 @@ const AddUser = ({ users, twitterprofile }) => {
 
   return (
     <div>
-  
+      {users.some((person) => person.account === twitterprofile) ? (
+        `congrats${user.firstinvite}! , \n you've successfully invited ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!`
+      ) : (
         <form>
           <br />
           <br />
@@ -146,18 +148,9 @@ const AddUser = ({ users, twitterprofile }) => {
             </li>
           ))}
         </form>
-   
+      )}
     </div>
   );
 };
 
 export default AddUser;
-
-/*
-
-    {users.some((person) => person.account === twitterprofile) ? (
-        `congrats${user.firstinvite}! , \n you've successfully invited ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!`
-      ) : (
-   )}
-
-*/

@@ -17,19 +17,17 @@ export const addUserToDatabase= async(newUser)=>{
   }
   
   
-  export const getUsersList= async(response)=>{
- 
-    await fetch("https://invito-teal.vercel.app/api/get-users ", {
+  export const getUsersList= async()=>{
+
+    const response= await fetch("http://localhost:3000/api/get-users ", {
       cache: "no-cache",
       next: {
         tags: ["users"],
       },
-    });
+    }) 
+    let data= response.usersList;
+  return await response.json({data});
    
-
-    revalidateTag("users");
-
-    return await res.json({users});
   }
 
     /* 
