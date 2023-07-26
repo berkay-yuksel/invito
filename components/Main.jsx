@@ -6,10 +6,10 @@ function Main({ users}) {
   const { data: session, status } = useSession();
 
   if (status === "authenticated") {
-    
+    console.log(session.user)
     return (
       <div>
-        helloo <b>{session.username} </b>you've succesffuly logged in and
+        helloo <b>{session.user.name} </b>you've succesffuly logged in and
         seeing protected content!
         <br />
         <AddUser
