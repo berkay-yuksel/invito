@@ -8,6 +8,18 @@ const handler = NextAuth({
       clientId: process.env.TWITTER_CLIENT_ID,
       clientSecret: process.env.TWITTER_CLIENT_SECRET,
       version: "2.0",
+      callbacks: {
+        async jwt(token, user) {
+          if (user) {
+            token.twitterUsername = user.screen_name;
+          }
+          return token;
+        },
+        async session(session, token) {
+          session.user = { ...session.user, twitterUsername: token.twitterUsername };
+          return session;
+        },
+      },
       
     }),
     GithubProvider({
