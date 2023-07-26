@@ -1,7 +1,7 @@
 import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
 import TwitterProvider from "next-auth/providers/twitter";
-
+import { fetchUserData } from '../../../../pages/api/twitter'; 
 const handler = NextAuth({
   providers: [
     TwitterProvider({
@@ -9,14 +9,12 @@ const handler = NextAuth({
       clientSecret: process.env.TWITTER_CLIENT_SECRET,
       version: "2.0",
       callbacks: {
-        async jwt(token, user) {
-          if (user) {
-            token.twitterUsername = user.screen_name;
-          }
-          return token;
-        },
-        async session(session, token) {
-          session.user = { ...session.user, twitterUsername: token.twitterUsername };
+        async session(session, user) {
+          // Fetch additional user data using Twitter API or any other source
+          const additionalData = await fetchUserData(user.accessToken);
+    
+          // Merge the additional data into the session object
+          session.user = { ...session.user, ...additionalData };
           return session;
         },
       },

@@ -3,13 +3,13 @@
 import AddUser from "./AddUser";
 import { useSession } from "next-auth/react";
 function Main({ users}) {
-  const { data: session, status, signIn } = useSession();
+  const { data: session, status } = useSession();
 
   if (status === "authenticated") {
-   console.log(signIn)
+   console.log(session)
     return (
       <div>
-        helloo <b>{session.user.twitterUsername} </b>you've succesffuly logged in and
+        helloo <b>{session.user.name} </b>you've succesffuly logged in and
         seeing protected content!
         <br />
         <AddUser
