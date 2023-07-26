@@ -9,16 +9,18 @@ const handler = NextAuth({
       clientSecret: process.env.TWITTER_CLIENT_SECRET,
       version: "2.0",
       callbacks: {
-        async session(session, user) {
-         
-
-          session.data.customField1 = 'Hello, this is customField1!';
-          
-          
-         
-          return session;
+        async signIn(user, account, profile) {
+          // Perform any additional actions or validations here
+          console.log('User signed in:', user);
+          console.log('Account information:', account);
+          console.log('User profile:', profile);
+    
+          // Include the account object in the session
+          user.account = account;
+    
+          return true;
         },
-      }
+      },
   
       
     }),
