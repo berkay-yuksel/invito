@@ -21,8 +21,8 @@ const handler = NextAuth({
           ...token,
           id:user.id,
           address:"deneme",
-          username:user.username,
-          token:token,
+          username:twitterUser.username,
+     
         }
       }
       return token;
