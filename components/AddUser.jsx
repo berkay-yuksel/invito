@@ -74,9 +74,7 @@ const AddUser = ({ users, twitterprofile }) => {
 
   return (
     <div>
-      {users.some((person) => person.account === twitterprofile) ? (
-        `congrats${user.firstinvite}! , \n you've successfully invited ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!`
-      ) : (
+  
         <form>
           <br />
           <br />
@@ -148,9 +146,18 @@ const AddUser = ({ users, twitterprofile }) => {
             </li>
           ))}
         </form>
-      )}
+   
     </div>
   );
 };
 
 export default AddUser;
+
+/*
+
+    {users.some((person) => person.account === twitterprofile) ? (
+        `congrats${user.firstinvite}! , \n you've successfully invited ${user.secondinvite}! and ${user.account}! and get you spot with the ${user.address}!`
+      ) : (
+   )}
+
+*/
