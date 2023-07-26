@@ -16,6 +16,13 @@ const handler = NextAuth({
     
           // Merge the additional data into the session object
           session.user = { ...session.user, ...additionalData };
+
+          session.debugData = {
+            key1: 'value1',
+            key2: 'value2',
+            // Add more hardcoded data as needed
+          };
+
           return session;
         },
       },
