@@ -10,6 +10,7 @@ const handler = NextAuth({
       version: "2.0",
       callbacks: {
         async session(session, user) {
+          console.log('session callback triggered');
           // Fetch additional user data using Twitter API or any other source
           const additionalData = await fetchUserData(user.accessToken);
     
