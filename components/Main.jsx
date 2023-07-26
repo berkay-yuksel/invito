@@ -10,7 +10,7 @@ function Main({ users }) {
     return (
       <div>
         helloo <b>{session.user.username} </b>you've succesffuly logged in and
-        seeing protected content!
+        seeing protected content! 1
         <br />
         <AddUser
           twitterprofile={session ? session.user.name : "@notfound"}
@@ -26,17 +26,4 @@ function Main({ users }) {
 
 export default Main;
 
-/*
 
-
-<br />      <br />      <br />      <br />
-{users.map((user)=>(
-<div key={user.id}>
-<p>{user.account}</p>
-<p>{user.firstinvite}</p>
-<p>{user.secondinvite}</p>
-<p>{user.address}</p>
-<hr/>
-</div>
-    ))}
-*/
