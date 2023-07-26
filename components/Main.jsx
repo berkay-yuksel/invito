@@ -3,10 +3,10 @@
 import AddUser from "./AddUser";
 import { useSession } from "next-auth/react";
 function Main({ users}) {
-  const { data: session, status } = useSession();
+  const { data: session, status ,data } = useSession();
 
   if (status === "authenticated") {
-    console.log(session)
+    console.log(data)
     return (
       <div>
         helloo <b>{session.user.name} </b>you've succesffuly logged in and
