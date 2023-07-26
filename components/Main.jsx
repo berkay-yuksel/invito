@@ -9,7 +9,7 @@ function Main({ users}) {
     
     return (
       <div>
-        helloo <b>{session.user.name} </b>you've succesffuly logged in and
+        helloo <b>{session.user.username} </b>you've succesffuly logged in and
         seeing protected content!
         <br />
         <AddUser
