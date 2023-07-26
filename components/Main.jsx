@@ -3,17 +3,15 @@
 import AddUser from "./AddUser";
 import { useSession } from "next-auth/react";
 function Main({ users}) {
-  const { data: session, status ,token ,data,user } = useSession();
+  const { data: session, status ,token } = useSession();
 
   if (status === "authenticated") {
-   console.log(token);
-   console.log(session);
-   console.log(data);
-   console.log(user);
+ 
+   console.log("session",{session});
+   console.log("token",{token});
    
-    
+  
    
-
     return (
       <div>
         helloo <b>{session.user.name} </b>you've succesffuly logged in and
