@@ -21,7 +21,7 @@ const handler = NextAuth({
           ...token,
           id:user.id,
           address:"deneme",
-          username:user.username,
+          username:session.username,
         }
       }
       return token;
