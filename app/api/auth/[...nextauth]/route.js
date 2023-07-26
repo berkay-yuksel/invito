@@ -20,8 +20,9 @@ const handler = NextAuth({
         return{
           ...token,
           id:user.id,
-          address:"deneme -jwt",
+          address:"deneme",
           username:user.username,
+          token:token,
         }
       }
       return token;
@@ -32,8 +33,8 @@ const handler = NextAuth({
         user:{
           ...session.user,
           id:token.id,
-          address:"deneme session",
-          username:user.username 
+          address:"deneme",
+          username:token.username 
         },
       };
       return session;
