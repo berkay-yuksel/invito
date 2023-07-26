@@ -21,9 +21,7 @@ const handler = NextAuth({
           ...token,
           id:user.id,
           address:"deneme",
-          twitterUsername: data.username,
-          twitterUsername2: user.username,
-     
+          account:user.profile,
         }
       }
       return token;
@@ -35,9 +33,7 @@ const handler = NextAuth({
           ...session.user,
           id:token.id,
           address:"deneme",
-          twitterUsername: data.username,
-          twitterUsername2: user.username,
-     
+          account:token.profile,
         },
       };
       return session;
