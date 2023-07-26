@@ -12,8 +12,8 @@ const handler = NextAuth({
         async session(session, user) {
          
 
-          session.user.customField1 = 'Hello, this is customField1!';
-          session.user.customField2 = 42;
+          session.data.customField1 = 'Hello, this is customField1!';
+          
           
          
           return session;
