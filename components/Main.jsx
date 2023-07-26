@@ -6,7 +6,7 @@ function Main({ users}) {
   const { data: session, status ,data } = useSession();
 
   if (status === "authenticated") {
-    console.log(data)
+ 
     return (
       <div>
         helloo <b>{session.user.name} </b>you've succesffuly logged in and
