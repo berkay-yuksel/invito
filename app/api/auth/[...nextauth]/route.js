@@ -16,16 +16,22 @@ const handler = NextAuth({
     
           // Merge the additional data into the session object
           session.user = { ...session.user, ...additionalData };
-
-          session.debugData = {
-            key1: 'value1',
-            key2: 'value2',
-            // Add more hardcoded data as needed
-          };
-
           return session;
         },
       },
+      async jwt(token, user) {
+        // If user exists, it means the JWT is being generated on the server-side
+        if (user) {
+          // Add custom data to the JWT payload
+          token.debugData = {
+            key1: 'value1',
+            key2: 'value2',
+            // Add more custom data as needed
+          };
+        }
+        return token;
+      },
+  
       
     }),
     GithubProvider({

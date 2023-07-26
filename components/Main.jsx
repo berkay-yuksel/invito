@@ -9,8 +9,7 @@ function Main({ users}) {
    console.log(session)
    
     
-   // Access the debugData
-   const debugData = session?.debugData;
+   const debugData = session?.jwt?.debugData;
    console.log('debugData:', debugData);
 
     return (
