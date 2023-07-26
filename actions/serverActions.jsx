@@ -1,10 +1,8 @@
 'use server';
-import { db } from '@vercel/postgres';
-import { revalidateTag } from "next/cache";
 
+import { revalidateTag } from "next/cache";
 export const addUserToDatabase= async(newUser)=>{
-  const client = await db.connect();
-  
+ 
   await fetch('https://invito-teal.vercel.app/api/post-users',
   {
     method:'POST',
@@ -15,10 +13,27 @@ export const addUserToDatabase= async(newUser)=>{
   }
   );
 
- 
-  
   revalidateTag('users')
   }
   
   
+  export const getUsersList= async(response)=>{
  
+    await fetch("https://invito-teal.vercel.app/api/get-users ", {
+      cache: "no-cache",
+      next: {
+        tags: ["users"],
+      },
+    });
+   
+
+    revalidateTag("users");
+
+    return await res.json({users});
+  }
+
+    /* 
+http://localhost:3000/api/get-users 
+
+https://invito-teal.vercel.app/api/get-users
+*/
