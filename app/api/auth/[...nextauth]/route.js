@@ -19,10 +19,9 @@ const handler = NextAuth({
       if(user){
         return{
           ...token,
-          ...session,
           id:user.id,
           address:"deneme",
-          description:user.description,
+      
         }
       }
       return token;
@@ -30,13 +29,11 @@ const handler = NextAuth({
     async session({ session, user, token }){
       return {
         ...session,
-        ...token,
         user:{
           ...session.user,
           id:token.id,
           address:"deneme",
-          description:token.description,
-          username,
+
         },
       };
       return session;
