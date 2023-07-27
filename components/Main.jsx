@@ -7,8 +7,8 @@ function Main({ users}) {
 
   if (status === "authenticated") {
  
-   console.log(session);
-   console.log(token);
+   console.log("session",{session});
+   console.log("token",{token});
    
   
    
