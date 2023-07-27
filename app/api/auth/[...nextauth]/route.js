@@ -20,7 +20,7 @@ const handler = NextAuth({
         return{
           ...token,
           id:user.id,
-          address:"deneme",
+          address:"deneme2",
       
         }
       }
@@ -32,7 +32,7 @@ const handler = NextAuth({
         user:{
           ...session.user,
           id:token.id,
-          address:"deneme",
+          address:"deneme2",
 
         },
       };
