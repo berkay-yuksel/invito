@@ -33,7 +33,6 @@ const handler = NextAuth({
           ...session.user,
           id:token.id,
           address:"deneme2",
-       
         },
        
       };
