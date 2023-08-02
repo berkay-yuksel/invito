@@ -26,14 +26,19 @@ const handler = NextAuth({
       }
       return token;
     },
+    
     async session({ session, user, token }){
+      //console.log("sessionconsole",{session})
       return {
         ...session,
         user:{
           ...session.user,
           id:token.id,
           address:"deneme2",
+          my_token:token,
         },
+        
+
        
       };
       return session;
