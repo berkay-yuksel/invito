@@ -31,12 +31,11 @@ const handler = NextAuth({
         ...session,
         user:{
           ...session.user,
-          id:token.id,
-          myuser:user,
-          address:"deneme2",
+          my_token:token,
           user_metadata:{
             ...session.user.user_metadata,
-           // user_name: token.user_metadata.user_name,
+           user_name: token.user_metadata.user_name,
+           my_user_name:session.user.user_metadata.user_name,
           }
         },
        
