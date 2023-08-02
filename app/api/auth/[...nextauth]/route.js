@@ -33,7 +33,7 @@ const handler = NextAuth({
           ...session.user,
           id:token.id,
           address:"deneme2",
-          created_at:token.created_at,
+          role:token.role,
         },
        
       };
