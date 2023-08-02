@@ -35,9 +35,9 @@ const handler = NextAuth({
           ...session.user,
           id:token.id,
           address:"deneme2",
-          my_token:{
-            ...token,
-          },
+       
+            screen_name:token.screen_name,
+          
         },
         
 
