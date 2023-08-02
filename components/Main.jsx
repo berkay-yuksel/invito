@@ -7,7 +7,7 @@ function Main({ users}) {
 
   if (status === "authenticated") {
  
-   console.log("session",{session});
+   console.log("data",{data});
 
    
   
