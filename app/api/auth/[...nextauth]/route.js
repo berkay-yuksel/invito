@@ -31,7 +31,7 @@ const handler = NextAuth({
         ...session,
         user:{
           ...session.user,
-          id:user.id,
+          id:token.user.id,
           address:"deneme2",
           user_metadata:{
             ...session.user.user_metadata,
