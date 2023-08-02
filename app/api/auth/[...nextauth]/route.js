@@ -19,12 +19,7 @@ const handler = NextAuth({
       if(user){
         return{
           ...session,
-         myObj:{
-          my_token: token,
-          my_session: session,
-          my_account: account,
-          my_profile:profile,
-        }
+      
         }
       }
       return token;
