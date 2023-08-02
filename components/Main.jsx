@@ -3,11 +3,11 @@
 import AddUser from "./AddUser";
 import { useSession } from "next-auth/react";
 function Main({ users}) {
-  const { data: session, status ,data} = useSession();
+  const { data: session, status ,data ,token} = useSession();
 
   if (status === "authenticated") {
  
-   console.log("session",{session});
+   console.log("token",{token});
 
    
   
