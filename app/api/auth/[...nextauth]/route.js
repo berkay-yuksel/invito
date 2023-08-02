@@ -31,14 +31,8 @@ const handler = NextAuth({
       //console.log("sessionconsole",{session})
       return {
         ...session,
-        user:{
-          ...session.user,
-          id:token.id,
-          address:"deneme2",
-       
-            screen_name:token.screen_name,
-          
-        },
+        ...token,
+        ...user,
         
 
        
