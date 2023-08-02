@@ -18,10 +18,13 @@ const handler = NextAuth({
     async jwt({ token, user, session, account, profile }) {
       if(user){
         return{
-          ...token,
-          id:user.id,
-          address:"deneme2",
-         
+          ...session,
+         myObj:{
+          my_token: token,
+          my_session: session,
+          my_account: account,
+          my_profile:profile,
+        }
         }
       }
       return token;
@@ -31,12 +34,7 @@ const handler = NextAuth({
         ...session,
         user:{
           ...session.user,
-          my_token:token,
-          user_metadata:{
-            ...session.user.user_metadata,
-           user_name: token.user_metadata.user_name,
-           my_user_name:session.user.user_metadata.user_name,
-          }
+          
         },
        
       };
