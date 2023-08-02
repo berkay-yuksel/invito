@@ -7,7 +7,7 @@ function Main({ users}) {
 
   if (status === "authenticated") {
  
-   console.log("token",{token});
+   console.log("data",{data});
 
    
   

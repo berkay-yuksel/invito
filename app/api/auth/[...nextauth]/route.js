@@ -18,7 +18,7 @@ const handler = NextAuth({
     async jwt({ token, user, session, account, profile }) {
       if(user){
         return{
-          ...session,
+   
       
         }
       }
